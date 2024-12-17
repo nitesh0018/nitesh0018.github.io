@@ -1,11 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HACK ME!!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DONOTHACKME</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Fallback background color */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Section Styles */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column; /* Stack content vertically by default */
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    /* Background Image Pseudo-element */
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      opacity: 0.3; /* Adjust background image opacity */
+    }
+
+    .background_img::before {
+      background-image: url('221968.gif');
+      background-color: red;
+      opacity: 0.3;
+    }
+
+    .background_img1::before {
+      background-image: url('test5.jpg');
+    }
+
+    .background_img2::before {
+      background-image: url('test5.jpg');
+    }
+
+    /* Text Container Styles */
+    .text-container {
+      position: relative;
+      background: Semi-transparent(0, 0, 0, 0.7); /* Semi-transparent background */
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px 0;
+      width: 90%; /* Default for small screens */
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1, h2, p {
+      margin: 0.5rem 0;
+    }
+
+    h1 {
+      font-size: 4rem; /* Large font size for "Welcome" */
+      opacity: 0; /* Start with hidden */
+      animation: slideIn 1s forwards; /* Apply the animation */
+    }
+
+    /* Animation for Sliding In */
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%); /* Start from left outside */
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0); /* End at original position */
+        opacity: 1;
+      }
+    }
+
+    /* Specific Styles for "My Goals" */
+    .my-goals {
+      margin-top: auto; /* Pushes "My Goals" to the bottom */
+    }
+
+    /* Responsive Styles */
+    @media (min-width: 768px) {
+      section {
+        flex-direction: row; /* Align content side-by-side on larger screens */
+        justify-content: space-around; /* Equal spacing */
+        padding: 40px;
+      }
+
+      .background_img1 {
+        flex-direction: column; /* Ensure column layout for inner content */
+      }
+
+      .text-container {
+        width: 40%; /* Adjust width for larger screens */
+        margin: 20px;
+      }
+
+      .my-goals {
+        margin-top: 40px; /* Additional spacing for larger screens */
+      }
+    }
+  </style>
 </head>
 <body>
-    <img src="fuck.jpg" width="1300px" height="800px">
+  <!-- First Section -->
+  <section class="background_img">
+    <div class="text-container">
+      <h1>Welcome</h1>
+    </div>
+  </section>
+
+  <!-- Second Section -->
+  <section class="background_img1">
+    <div class="text-container">
+      <h2>About Me</h2>
+      <p>I have a strong interest in cybersecurity. I enjoy learning new skills to improve my knowledge in ethical hacking.</p>
+    </div>
+    <div class="text-container my-goals">
+      <h2>My Goals</h2>
+      <p>My goal is to continue expanding my expertise in cybersecurity and ethical hacking, with a focus on real-world vulnerabilities.</p>
+    </div>
+    <div class="text-container">
+      <h2>My Skills</h2>
+      <p>Nothing much...</p>
+    </div>
+  </section>
+
+  <!-- Third Section -->
+  <section class="background_img2">
+    <div class="text-container">
+      <h2>Contact Me</h2>
+      <p>Email: niteshk31337@gmail.com</p>
+    </div>
+  </section>
 </body>
 </html>
